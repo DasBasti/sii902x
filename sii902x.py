@@ -37,11 +37,11 @@ set_bits(0x1A, 0x01, output_mode)
 # Step 5: TPI configuration
 pixelClock = 2400  # 24MHz / 10000
 
-vFreq = 0  # in Hz
+vFreq = 50  # in Hz
 
-pixelsPerLine = 0  # in pixels
+pixelsPerLine = 1056  # 800 pixels width + 256 blanking
 
-Lines = 0  # in lines
+Lines = 635  # 480 lines + 155 blanking
 
 pixelRepetitionFactor = 0  # Bit 0 .. 3
 edgeSelect = 1 << 4  # Bit 4
