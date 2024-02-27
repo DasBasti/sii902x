@@ -63,20 +63,20 @@ buf = bytes(
 )
 i2c.write(0x00, buf)
 
-PIXEL_LEN = 42ns 
+#PIXEL_LEN = 42ns 
 
-VSYNC_LEN = 442us
-VSYNC_P = 43,33Hz 23,03ms
+#VSYNC_LEN = 442us
+#VSYNC_P = 43,33Hz 23,03ms
 VSYNC = 1 #low active
 
-HSYNC_LEN = 412ns
-HSYNC_P = 22,73kHz 44000ns % 42ns
+#HSYNC_LEN = 412ns
+H#SYNC_P = 22,73kHz 44000ns % 42ns
 HSYNC = 1 #low active
 DE_DLY = 1023 # ~43800ns % 42ns
 DE_TOP = 1 # measured 2000000ns % 42ns 
 DE_CNT = 800
 DE_LIN = 480
-DE_LOW = 10,8us
+#DE_LOW = 10,8us
 
 buf = bytes(
     [
