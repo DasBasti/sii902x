@@ -1,3 +1,4 @@
+
 import pylibi2c
 
 def set_bits(address, mask, bits):
@@ -37,7 +38,7 @@ set_bits(0x1A, 0x01, output_mode)
 # Step 5: TPI configuration
 pixelClock = 2400  # 24MHz / 10000
 
-vFreq = 50  # in Hz
+vFreq = 43  # in Hz
 
 pixelsPerLine = 1056  # 800 pixels width + 256 blanking
 
@@ -63,4 +64,34 @@ buf = bytes(
 )
 i2c.write(0x00, buf)
 
+PIXEL_LEN = 42ns 
+
+VSYNC_LEN = 442us
+VSYNC_P = 43,33Hz 23,03ms
+VSYNC = 1 #low active
+
+HSYNC_LEN = 412ns
+HSYNC_P = 22,73kHz 44000ns % 42ns
+HSYNC = 1 #low active
+DE_DLY = 1023 # ~43800ns % 42ns
+DE_TOP = 1 # measured 2000000ns % 42ns 
+DE_CNT = 800
+DE_LIN = 480
+DE_LOW = 10,8us
+
+
+
+buf = bytes(
+    [
+        DE_DLY & 0xff,
+        (DE_DLY >> 8) & 0x3 + 0x70,
+        DE_TOP & 0x7f,
+        0x00,
+        DE_CNT & 0xff,
+        (DE_CNT >> 8) & 0x0f,
+        DE_LIN & 0xff,
+        (DE_LIN >> 8) & 0x0f,
+    ]
+)
+i2c.write(0x62, buf)
 
