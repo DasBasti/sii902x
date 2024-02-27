@@ -70,7 +70,7 @@ i2c.write(0x00, buf)
 VSYNC = 1 #low active
 
 #HSYNC_LEN = 412ns
-H#SYNC_P = 22,73kHz 44000ns % 42ns
+#HSYNC_P = 22,73kHz 44000ns % 42ns
 HSYNC = 1 #low active
 DE_DLY = 1023 # ~43800ns % 42ns
 DE_TOP = 1 # measured 2000000ns % 42ns 
