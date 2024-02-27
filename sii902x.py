@@ -79,8 +79,6 @@ DE_CNT = 800
 DE_LIN = 480
 DE_LOW = 10,8us
 
-
-
 buf = bytes(
     [
         DE_DLY & 0xff,
@@ -94,4 +92,7 @@ buf = bytes(
     ]
 )
 i2c.write(0x62, buf)
+
+# 0x60 Sync Register Configuration and Sync Monitoring Registers
+i2c.write(0x60, bytes([0xa0]))
 
