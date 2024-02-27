@@ -32,7 +32,7 @@ avi_pwr = 0
 i2c.write(0x1E, bytes([avi_pwr]))
 
 # Step 4: enable output
-i2c.write(0x1A, bytes([0x01])
+i2c.write(0x1A, bytes([0x01]))
 
 # Step 5: TPI configuration
 pixelClock = 2400  # 24MHz / 10000
