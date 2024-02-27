@@ -93,5 +93,5 @@ buf = bytes(
 i2c.write(0x62, buf)
 
 # 0x60 Sync Register Configuration and Sync Monitoring Registers
-i2c.write(0x60, bytes([0xa0]))
-
+#i2c.write(0x60, bytes([0xa0]))
+print(i2c.read(0x69, 4))
